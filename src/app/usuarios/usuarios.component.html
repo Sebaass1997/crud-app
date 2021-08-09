@@ -1,1 +1,16 @@
-<p>usuarios works!</p>
+<form>
+    <input #busqueda class="form-control" type="text">
+<button (click)="searchUsuario(busqueda)" type="button" class="btn">Buscar</button>
+</form>
+
+
+
+
+
+<li *ngFor="let usuario of usuarios" >
+    <label>{{usuario.apynom }} </label>
+    
+</li>
+
+
+
