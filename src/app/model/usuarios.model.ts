@@ -1,8 +1,8 @@
 export class Usuario {    
     idusuarios?: number;
     apynom?:string;
-    contraseña?:string;
-    telefono?:string;
+    password?:string;
+    telefono?:number;
     email?:string;
     activo?:boolean;
   }

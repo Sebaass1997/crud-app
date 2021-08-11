@@ -29,11 +29,12 @@ export class AddUsuarioComponent implements OnInit {
 
 
   addUsario(form:any) {    
-    let usuario = new Usuario();
+    let usuario = new Usuario();     
     usuario.apynom = form.controls['nombre'].value;
-    usuario.email = form.controls["email"].value;
-    usuario.contraseña = form.controls['telefono'].value;
-    usuario.telefono = form.controls['password'].value;         
+    usuario.email = form.controls['email'].value;
+    usuario.password = form.controls['password'].value;
+    usuario.telefono = form.controls['telefono'].value; 
+         
     this.service.addUsuario(usuario)
   
   }

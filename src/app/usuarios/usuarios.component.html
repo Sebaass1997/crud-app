@@ -1,16 +1,19 @@
-<form>
-    <input #busqueda class="form-control" type="text">
-<button (click)="searchUsuario(busqueda)" type="button" class="btn">Buscar</button>
+<form class="input-group mb-3">
+    <input #busqueda class="form-control" type="text" placeholder="Buscar usuario.." aria-label="Buscar usuario" aria-describedby="button-addon">
+<button (click)="searchUsuario(busqueda)" class="btn btn-outline-secondary" type="button" id="button-addon">Buscar</button>
 </form>
 
-
-
-
-
-<li *ngFor="let usuario of usuarios" >
-    <label>{{usuario.apynom }} </label>
-    
-</li>
-
-
-
+<ul class="list-group">
+    <li
+      *ngFor="let usuario of usuarios" 
+      class="list-group-item">
+      <label class="label mx-1 "><b>Nombre:</b></label>{{usuario.apynom }}<br>
+      <label class="label mx-1"><b>Email:</b></label>{{usuario.email }}<br>
+      <label class="label mx-1"><b>Telefono:</b></label>{{usuario.telefono }}
+      <span class="d-flex justify-content-end">
+        <button class="btn btn-danger btn-sm" (click)="deleteUser(usuario.idusuarios)">Borrar</button>
+        <button class="btn btn-success btn-sm" (click)="editUser(usuario.idusuarios)">Editar</button>
+        <button class="btn btn-warning btn-sm" (click)="editPassword(usuario.idusuarios)">Cambiar contraseña</button>
+      </span>
+    </li>
+  </ul>

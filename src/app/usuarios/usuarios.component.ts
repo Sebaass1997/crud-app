@@ -3,6 +3,7 @@ import { Usuario } from '../model/usuarios.model';
 import { UsuariosService } from '../usuarios.service';
 import { NgModel, NgControl } from '@angular/forms'
 
+
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
@@ -13,9 +14,9 @@ import { NgModel, NgControl } from '@angular/forms'
 
 export class UsuariosComponent implements OnInit {
   //usuarios?: Usuario[];
-  articles:any = []
   usuarios:any = [];
   apynom = '';
+
   constructor(private service: UsuariosService) { }
 
   ngOnInit(): void {
@@ -40,6 +41,18 @@ export class UsuariosComponent implements OnInit {
           });
     }
   
-    
+deleteUser(idusuario:any){
+  this.service.deleteUsuario(idusuario);
+  
+}    
+
+editUser(idusuario:any){
+
+}
+
+editPassword(idusuario:any){
+
+}
+
 
 }
