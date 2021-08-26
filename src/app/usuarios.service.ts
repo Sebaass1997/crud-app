@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders,  } from '@angular/common/http';
 import { error } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import { Usuario } from './model/usuarios.model';
@@ -20,7 +20,7 @@ export class UsuariosService {
     
   }
 
-  findByID(apynom: any){
+  findByID(apynom: string){
     return this.http.get<any>(`${this.baseUrl}/${apynom}`);
   }
 
